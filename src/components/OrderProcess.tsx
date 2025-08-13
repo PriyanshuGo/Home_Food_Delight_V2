@@ -34,14 +34,6 @@ const iconPop = (delay = 0): Variants => ({
     }
 });
 
-const arrowSlide = (delay = 0): Variants => ({
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { delay, duration: 0.4, ease: "easeOut" }
-    }
-});
 
 function OrderProcess() {
     return (
@@ -76,7 +68,7 @@ function OrderProcess() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={{ visible: { transition: { staggerChildren: 0.25 } } }}
-                    className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto relative"
+                    className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto relative"
                 >
                     {processSteps.map((step, index) => {
                         const Icon = step.icon;

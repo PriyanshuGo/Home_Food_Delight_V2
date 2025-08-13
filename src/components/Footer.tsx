@@ -1,8 +1,12 @@
 "use client";
-import { MapPin, Phone, Mail, Clock, Heart, Instagram, Twitter } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Heart } from 'lucide-react';
+import { FaInstagram, FaLinkedin } from "react-icons/fa"; // install: npm install react-icons
+
 import { Separator } from './ui/separator';
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import Logo from '../../public/logo.jpg';
+
 
 export default function Footer() {
   const container = {
@@ -36,12 +40,19 @@ export default function Footer() {
       className="bg-brown text-white mt-16 border-t border-saffron/20"
     >
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           {/* Company Info */}
           <motion.div variants={fadeUp}>
             <div className="flex items-center space-x-3 mb-4">
               <motion.div variants={popIn}>
+                <Image
+                  src={Logo}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-3xl"
+                />
               </motion.div>
               <div>
                 <h3 className="text-lg text-white">Home Food Delite</h3>
@@ -56,7 +67,7 @@ export default function Footer() {
               className="flex items-center space-x-2 text-white/70 mt-4"
             >
               <Heart className="h-4 w-4 text-saffron" />
-              <span className="text-sm">Made with love since 2020</span>
+              <span className="text-sm">Made with love since 2022</span>
             </motion.div>
           </motion.div>
 
@@ -67,19 +78,23 @@ export default function Footer() {
               <div className="flex space-x-3">
                 <MapPin className="h-4 w-4 text-saffron mt-1" />
                 <div>
-                  <p>123 Main St Anytown CA</p>
+                  <a href="https://maps.app.goo.gl/JiyBZGidhvj2REoh8">
+                    <p>Flat No. 1, Tower B, Anandam Apartment
+                    </p>
+                    <p>Dwarka Sector 28, New Delhi – 110077</p>
+                  </a>
                 </div>
               </div>
               <div className="flex space-x-3">
                 <Phone className="h-4 w-4 text-saffron" />
-                <a href="tel:+ (555) 123-4567" className="hover:text-white transition-colors">
-                  +91 555 123-4567
+                <a href="tel:+91 88822 92184" className="hover:text-white transition-colors">
+                  +91 88822 92184
                 </a>
               </div>
               <div className="flex space-x-3">
                 <Mail className="h-4 w-4 text-saffron" />
-                <a href="mailto:info@greeneartlandscaping.com" className="hover:text-white transition-colors">
-                  info@greeneartlandscaping.com
+                <a href="mailto:homefooddelightdelhi@gmail.com" className="hover:text-white transition-colors">
+                  homefooddelightdelhi@gmail.com
                 </a>
               </div>
             </div>
@@ -105,23 +120,6 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div variants={slideLeft}>
-            <h3 className="text-lg text-white mb-4">Quick Links</h3>
-            <div className="space-y-2 text-sm">
-              {["Today's Menu", "About Us", "Pricing", "Contact", "FAQ"].map((item, idx) => (
-                <motion.a
-                  variants={fadeUp}
-                  key={idx}
-                  href="#"
-                  className="block text-white/80 hover:text-white transition-colors"
-                  whileHover={{ x: 5 }}
-                >
-                  {item}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
         </div>
 
         <Separator className="my-8 bg-white/20" />
@@ -132,8 +130,26 @@ export default function Footer() {
             <p className="text-sm text-white/70">&copy;  Home Food Delite.</p>
             <p className="text-xs text-white/60">Made with ❤️ for food lovers everywhere</p>
           </div>
-          <div>
 
+          <div className="flex gap-4">
+            <a
+              href="https://www.instagram.com/homefooddelightdelhi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-saffron transition-colors duration-200"
+              aria-label="Follow us on Instagram"
+            >
+              <FaInstagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/home-food-delight/posts/?feedView=all"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-saffron transition-colors duration-200"
+              aria-label="Connect on LinkedIn"
+            >
+              <FaLinkedin size={20} />
+            </a>
           </div>
         </motion.div>
 

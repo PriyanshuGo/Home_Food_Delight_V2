@@ -90,7 +90,7 @@ function HeroPage() {
             {/* Badge with scale pop */}
             <motion.div variants={scalePop(0)}>
               <Badge variant="outline" className="border-saffron text-saffron bg-white/80">
-                ⭐ Authentic Home-Style Cooking Since 2020
+                ⭐ Authentic Home-Style Cooking Since 2022
               </Badge>
             </motion.div>
 

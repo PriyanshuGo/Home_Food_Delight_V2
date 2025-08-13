@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import Image from 'next/image';
+import Logo from '../../public/logo.jpg';
 
 
 export default function Navigation() {
@@ -19,6 +19,7 @@ export default function Navigation() {
   const navItems = [
     { id: 'home', label: 'Home', link: '/' },
     { id: 'menu', label: 'Menu', link: '/menu' },
+    { id: 'contact', label: 'Contact', link: '/contact' },
   ];
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -31,6 +32,13 @@ export default function Navigation() {
           <div className="flex items-center space-x-3 cursor-pointer">
             <div className="w-10 h-10 bg-gradient-warm rounded-full flex items-center justify-center">
               <Link href="/">
+              <Image
+                src={Logo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-3xl"
+              />
               </Link>
             </div>
             <div>
@@ -64,23 +72,6 @@ export default function Navigation() {
 
           {/* Cart & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <Link href="/cart">
-              <Button
-                variant="outline"
-                size="sm"
-                className="relative border-saffron text-saffron hover:bg-saffron"
-              >
-                <ShoppingBag className="h-4 w-4 mr-2" />
-                <span className="hidden sm:inline">Cart</span>
-                {cartItems.length ? (<Badge
-                  variant="destructive"
-                  className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-saffron"
-                >
-                  {cartItems.length}
-                </Badge>) : null}
-              </Button>
-            </Link>
-
             <Button
               variant="ghost"
               size="sm"
