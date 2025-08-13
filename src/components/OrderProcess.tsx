@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRight } from 'lucide-react';
 import { processSteps } from '@/utils/constants';
-import { motion, Variants, Transition } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const fadeUpSpring = (delay = 0): Variants => ({
     hidden: { opacity: 0, y: 40, scale: 0.95 },

@@ -8,7 +8,6 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { c } from "framer-motion/dist/types.d-Cjd591yU";
 
 
 

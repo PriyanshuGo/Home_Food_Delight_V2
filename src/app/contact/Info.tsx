@@ -42,7 +42,7 @@ function Info() {
                     <h1 className="text-4xl font-bold text-brown mb-4">Get in Touch</h1>
                     <p className="text-lg text-brown/80 max-w-2xl mx-auto">
                         Have questions about our tiffin service? Want to share feedback?
-                        We'd love to hear from you!
+                        We&apos;d love to hear from you!
                     </p>
                 </div>
 

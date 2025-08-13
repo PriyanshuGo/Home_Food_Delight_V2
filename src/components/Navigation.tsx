@@ -5,8 +5,6 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
 import Image from 'next/image';
 import Logo from '../../public/logo.jpg';
 
@@ -21,8 +19,6 @@ export default function Navigation() {
     { id: 'menu', label: 'Menu', link: '/menu' },
     { id: 'contact', label: 'Contact', link: '/contact' },
   ];
-
-  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
     <nav className="bg-white shadow-lg border-b border-saffron/20 sticky top-0 z-40">
