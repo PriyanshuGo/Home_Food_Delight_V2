@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
-import ReduxProvider from '@/components/ReduxProvider'; // ✅ Client wrapper
 import ScrollManager from "@/components/ScrollManager";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -36,27 +35,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ReduxProvider>
-          {/* Alert Banner */}
-          <div className="bg-saffron text-white py-2 px-4 text-center">
-            <p className="text-sm">
-              🍽️ “Freshly Prepared. Google-Certified Chefs. Real Home Food — Made Just for You.”
-            </p>
-          </div>
-          <Navigation />
-          <ScrollManager />
-          {children}
-          <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            closeOnClick
-            pauseOnHover
-            draggable
-          />
-          <Analytics />
-          <SpeedInsights />
-        </ReduxProvider>
+        {/* Alert Banner */}
+        <div className="bg-saffron text-white py-2 px-4 text-center">
+          <p className="text-sm">
+            🍽️ “Freshly Prepared. Google-Certified Chefs. Real Home Food — Made Just for You.”
+          </p>
+        </div>
+        <Navigation />
+        <ScrollManager />
+        {children}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+        />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
